@@ -1,0 +1,99 @@
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: #333;
+  color: white;
+}
+
+.App-header {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  color: white;
+}
+
+.App-header h1 {
+  font-size: 50px;
+  text-align: center;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.col {
+  text-align: center;
+}
+
+.Control {
+  font-size: 30px;
+  line-height: 1;
+  vertical-align: center; 
+  -webkit-user-select: none;
+  user-select: none; 
+}
+
+.Control a.ControlBtn {
+  transition: all 0.3s ease;
+  border: 1px white solid;
+  border-radius: 50%;
+  color: white;
+  text-decoration: none;
+  padding: 5px 12px;
+  font-family: Consolas, monospace;
+}
+
+.Control a.ControlBtn:hover {
+  background: white;
+  color: #333;
+}
+
+.Control a.ControlBtn.minus {
+  margin-right: 15px;
+}
+
+.Control a.ControlBtn.plus {
+  margin-left: 15px;
+}
+
+.Timer {
+  padding-top: 80px;
+}
+
+.Timer p {
+  height: 35px;
+  font-size: 30px;
+}
+
+#minute, #second {
+  font-size: 90px;
+}
+
+@media(max-width: 768px) {
+  .App-header {
+    padding-bottom: 10px;
+  }
+
+  .App-header h1 {
+    font-size: 40px;
+  }
+  .row {
+    flex-direction: column;
+  }
+
+  .col {
+    margin-bottom: 25px;
+  }
+
+  .Control {
+    font-size: 20px;
+  }
+
+  .Control a.ControlBtn {
+    padding: 5px 10px;
+  }
+}
