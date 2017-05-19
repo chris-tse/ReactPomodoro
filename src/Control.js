@@ -1,14 +1,6 @@
 import React, { Component } from 'react';
 
 class Control extends Component {
-	constructor(props) {
-		super(props)
-		this.state = {
-			type: props.lengthType,
-			value: props.defaultValue
-		}
-	}
-
 	render() {
 		return (
 			<div className="Control">
