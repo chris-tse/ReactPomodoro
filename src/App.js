@@ -8,13 +8,50 @@ class App extends Component {
     super(props)
 
     this.state = {
-      minShown = props.minShown
+      currMin: 25,
+      currSec: 0,
+      sessLength: 25,
+      breakLength: 5,
+      isSession: true,
+      isRunning: false
     }
     this.minDown = this.minDown.bind(this)
   }
   minDown() {
     this.control.decrementMin()
   }
+
+  startTimer() {
+        this.setState({isRunning: true})
+        let min = this.state.min
+        let sec = this.state.sec
+        setInterval(() => {
+            if (sec > 0) {
+                sec--
+                this.setState({sec: sec})
+            } else {
+                min--
+                sec = 59
+                this.setState({
+                    min: min,
+                    sec: sec
+                })
+            }
+
+            if (min === 0 && sec === 0) {
+              if (this.state.isSession) {
+                this.setState({isSession:false})
+                min = this.state.breakLength
+                sec = 0
+              } else {
+                this.setState({isSession:true})
+                min = this.state.sessLength
+                sec = 0
+              }
+            }
+            
+        }, 10)
+    }
 
   render() {
     return (
@@ -24,15 +61,15 @@ class App extends Component {
         </div>
         <div className="row">
           <div className="col">
-            <Control defaultValue="5" lengthType="Break"/>
+            <Control defaultValue="5" breakLength={this.state.breakLength}/>
           </div>
           <div className="col">
-            <Control ref={(thing) => {this.control = thing}} defaultValue="25" lengthType="Session" minDown={this.minDown}/>
+            <Control ref={(thing) => {this.control = thing}} defaultValue="25" sessLength={this.state.sessLength} minDown={this.minDown}/>
           </div>
         </div>
         <div className="row">
           <div className="col">
-            <Timer startMin="25" startSec="0"/>
+            <Timer onClick={this.startTimer} currMin={this.state.currMin} currSec={this.state.currSec}/>
           </div>
         </div>
       </div>
@@ -40,4 +77,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default App

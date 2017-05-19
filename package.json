@@ -2,6 +2,7 @@
   "name": "test",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://christopher-tse.github.io/ReactPomodoro",
   "dependencies": {
     "microevent": "^1.0.0",
     "react": "^15.5.4",
