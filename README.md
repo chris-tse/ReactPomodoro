@@ -1,4 +1,4 @@
-#ReactPomodoro
+# ReactPomodoro
 
 [Demo](https://christopher-tse.github.io/ReactPomodoro/)
 
