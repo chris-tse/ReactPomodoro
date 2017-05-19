@@ -8,6 +8,18 @@ body {
   color: white;
 }
 
+.fa {
+  font-size: 50px;
+}
+
+.left-pad {
+  padding-left: 10px;
+}
+
+.right-pad {
+  padding-right: 10px;
+}
+
 .App-header {
   padding-top: 50px;
   padding-bottom: 50px;
@@ -25,8 +37,18 @@ body {
   justify-content: space-around;
 }
 
+.row.grouped {
+  justify-content: center;
+  padding-top: 30px;
+}
+
 .col {
   text-align: center;
+}
+
+.col a {
+  color: white;
+  text-decoration: none;
 }
 
 .Control {
@@ -41,8 +63,6 @@ body {
   transition: all 0.3s ease;
   border: 1px white solid;
   border-radius: 50%;
-  color: white;
-  text-decoration: none;
   padding: 5px 12px;
   font-family: Consolas, monospace;
 }
@@ -61,7 +81,7 @@ body {
 }
 
 .Timer {
-  padding-top: 80px;
+  padding-top: 30px;
 }
 
 .Timer p {
